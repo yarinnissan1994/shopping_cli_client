@@ -4,12 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="46c60808-4630-4a91-b796-103d570ecfb3" name="Changes" comment="Added a generic List Service.">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/shopping_cli/Menus/CategoryMenu.java" afterDir="false" />
+    <list default="true" id="46c60808-4630-4a91-b796-103d570ecfb3" name="Changes" comment="Created Category menu">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/shopping_cli/Menus/ProductMenu.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/shopping_cli/Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/shopping_cli/Application.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/shopping_cli/entities/Category.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/shopping_cli/entities/Category.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/shopping_cli/services/ListManagerService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/shopping_cli/services/ListManagerService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/shopping_cli/Menus/CategoryMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/shopping_cli/Menus/CategoryMenu.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -175,7 +173,21 @@
       <option name="project" value="LOCAL‎" />
       <updated>1687521556244</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL‎-00014" summary="Refactor List Manager Service.">
+      <created>1687535644914</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL‎-00014" />
+      <option name="project" value="LOCAL‎" />
+      <updated>1687535644914</updated>
+    </task>
+    <task id="LOCAL‎-00015" summary="Created Category menu">
+      <created>1687535669539</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL‎-00015" />
+      <option name="project" value="LOCAL‎" />
+      <updated>1687535669539</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -192,6 +204,8 @@
     <MESSAGE value="Added My Cart Screen." />
     <MESSAGE value="Added Checkout Screen." />
     <MESSAGE value="Added a generic List Service." />
-    <option name="LAST_COMMIT_MESSAGE" value="Added a generic List Service." />
+    <MESSAGE value="Refactor List Manager Service." />
+    <MESSAGE value="Created Category menu" />
+    <option name="LAST_COMMIT_MESSAGE" value="Created Category menu" />
   </component>
 </project>

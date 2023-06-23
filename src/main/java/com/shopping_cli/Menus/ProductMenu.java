@@ -1,16 +1,18 @@
 package com.shopping_cli.Menus;
 
+import com.shopping_cli.entities.Category;
+import com.shopping_cli.entities.Product;
 import com.shopping_cli.services.ConsoleService;
 import com.shopping_cli.services.ListManagerService;
 
 import java.util.List;
 import java.util.Scanner;
 
-public class CategoryMenu {
-    public static void start(Scanner scanner, List<com.shopping_cli.entities.Category> categories) {
+public class ProductMenu {
+    public static void start(Scanner scanner, List<Product> products) {
         ConsoleService.clearConsole();
 
-        ListManagerService<com.shopping_cli.entities.Category> categoryListManager = new ListManagerService<>(categories);
+        ListManagerService<Product> productListManager = new ListManagerService<>(products);
 
         boolean breakLoop;
 
@@ -19,21 +21,22 @@ public class CategoryMenu {
         do {
             breakLoop = false;
 
-            List<com.shopping_cli.entities.Category> currentPageItems = categoryListManager.getCurrentPageItems();
-            int currentPage = categoryListManager.getCurrentPage();
-            int totalPages = categoryListManager.getTotalPages();
+            List<Product> currentPageItems = productListManager.getCurrentPageItems();
+            int currentPage = productListManager.getCurrentPage();
+            int totalPages = productListManager.getTotalPages();
 
             System.out.println("==========================================");
             System.out.println("|             Shopping CLI               |");
             System.out.println("==========================================");
-            System.out.println("|              Categories                |");
+            System.out.println("|               Products                 |");
             System.out.println("==========================================");
             if(currentPage < totalPages )
                 System.out.println("| N. Next Page                           |");
             if(currentPage != 1)
                 System.out.println("| P. Previous Page                       |");
-            System.out.println("| S. Sort Categories by name             |");
-            System.out.println("| F. Search Category                     |");
+            System.out.println("| SN. Sort Products by name              |");
+            System.out.println("| SP. Sort Products by price             |");
+            System.out.println("| F. Search Product                      |");
             System.out.println("| 0. Back to Main Menu                   |");
             System.out.println("==========================================");
 
@@ -44,15 +47,19 @@ public class CategoryMenu {
 
             switch (choice) {
                 case "n" -> {
-                    categoryListManager.goToNextPage();
+                    productListManager.goToNextPage();
                     ConsoleService.clearConsole();
                 }
                 case "p" -> {
-                    categoryListManager.goToPreviousPage();
+                    productListManager.goToPreviousPage();
                     ConsoleService.clearConsole();
                 }
-                case "s" -> {
-                    System.out.println("Sort");
+                case "sn" -> {
+                    System.out.println("Sort by name");
+                    ConsoleService.clearConsole();
+                }
+                case "sp" -> {
+                    System.out.println("Sort by price");
                     ConsoleService.clearConsole();
                 }
                 case "f" -> {
@@ -60,23 +67,23 @@ public class CategoryMenu {
                     ConsoleService.clearConsole();
                 }
                 case "1" -> {
-                    System.out.println("category 1");
+                    System.out.println("Product 1");
                     breakLoop = true;
                 }
                 case "2" -> {
-                    System.out.println("category 2");
+                    System.out.println("Product 2");
                     breakLoop = true;
                 }
                 case "3" -> {
-                    System.out.println("category 3");
+                    System.out.println("Product 3");
                     breakLoop = true;
                 }
                 case "4" -> {
-                    System.out.println("category 4");
+                    System.out.println("Product 4");
                     breakLoop = true;
                 }
                 case "5" -> {
-                    System.out.println("category 5");
+                    System.out.println("Product 5");
                     breakLoop = true;
                 }
                 case "0" -> {
@@ -94,7 +101,7 @@ public class CategoryMenu {
     }
 
 
-    private static void displayCategories(List<com.shopping_cli.entities.Category> categories, int currentPage, int totalPages) {
+    private static void displayCategories(List<Product> products, int currentPage, int totalPages) {
 
         System.out.println();
         System.out.println("Page " + currentPage + " of " + totalPages);
@@ -102,7 +109,7 @@ public class CategoryMenu {
 
         int i = 1;
 
-        for (com.shopping_cli.entities.Category category : categories) {
+        for (Product category : products) {
             System.out.println("- " + i + ". " + category.getName());
             i++;
         }
