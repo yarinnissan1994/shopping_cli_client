@@ -4,12 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="46c60808-4630-4a91-b796-103d570ecfb3" name="Changes" comment="Spelling error correction.">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/shopping_cli/Menus/MainMenu.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/shopping_cli/Screens/ProfileScreen.java" afterDir="false" />
+    <list default="true" id="46c60808-4630-4a91-b796-103d570ecfb3" name="Changes" comment="Added Profile Screen.">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/shopping_cli/Screens/CheckoutScreen.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/shopping_cli/Screens/MyCartScreen.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/shopping_cli/Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/shopping_cli/Application.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/shopping_cli/Menus/EntryMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/shopping_cli/Menus/EntryMenu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/shopping_cli/Screens/ProfileScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/shopping_cli/Screens/ProfileScreen.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -138,7 +137,21 @@
       <option name="project" value="LOCAL‎" />
       <updated>1687488871405</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL‎-00009" summary="Added Main Menu.">
+      <created>1687519721317</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL‎-00009" />
+      <option name="project" value="LOCAL‎" />
+      <updated>1687519721317</updated>
+    </task>
+    <task id="LOCAL‎-00010" summary="Added Profile Screen.">
+      <created>1687519757262</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL‎-00010" />
+      <option name="project" value="LOCAL‎" />
+      <updated>1687519757262</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -150,6 +163,8 @@
     <MESSAGE value="Created Login Screen." />
     <MESSAGE value="Created ConsoleService." />
     <MESSAGE value="Spelling error correction." />
-    <option name="LAST_COMMIT_MESSAGE" value="Spelling error correction." />
+    <MESSAGE value="Added Main Menu." />
+    <MESSAGE value="Added Profile Screen." />
+    <option name="LAST_COMMIT_MESSAGE" value="Added Profile Screen." />
   </component>
 </project>

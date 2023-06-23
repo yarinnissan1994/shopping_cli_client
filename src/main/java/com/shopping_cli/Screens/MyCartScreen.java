@@ -4,7 +4,7 @@ import com.shopping_cli.services.ConsoleService;
 
 import java.util.Scanner;
 
-public class ProfileScreen {
+public class MyCartScreen {
     public static int start(Scanner scanner) {
 
         ConsoleService.clearConsole();
@@ -19,10 +19,11 @@ public class ProfileScreen {
             System.out.println("==========================================");
             System.out.println("|             Shopping CLI               |");
             System.out.println("==========================================");
-            System.out.println("|              My Profile                |");
+            System.out.println("|                My Cart                 |");
             System.out.println("==========================================");
-            System.out.println("|  1. Edit Profile                       |");
-            System.out.println("|  2. View Order History                 |");
+            System.out.println("|  1. Checkout                           |");
+            System.out.println("|  2. Edit Cart                          |");
+            System.out.println("|  3. Continue Shopping                  |");
             System.out.println("|  0. Back to Main Menu                  |");
             System.out.println("==========================================");
 
@@ -30,8 +31,9 @@ public class ProfileScreen {
             String choice = scanner.nextLine();
 
             value = switch (choice) {
-                case "1" -> 1; // Edit Profile
-                case "2" -> 2; // View Order History
+                case "1" -> 1; // Checkout
+                case "2" -> 2; // Edit Cart
+                case "3" -> 3; // Continue Shopping
                 case "0" -> 0; // Back to Main Menu
                 default -> {
                     ConsoleService.spacingConsole();
