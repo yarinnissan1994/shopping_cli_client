@@ -4,9 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="46c60808-4630-4a91-b796-103d570ecfb3" name="Changes" comment="Created ConsoleService.">
+    <list default="true" id="46c60808-4630-4a91-b796-103d570ecfb3" name="Changes" comment="Spelling error correction.">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/shopping_cli/Menus/MainMenu.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/shopping_cli/Screens/ProfileScreen.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/shopping_cli/Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/shopping_cli/Application.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/shopping_cli/Screens/RegisterationScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/shopping_cli/Screens/RegistrationScreen.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/shopping_cli/Menus/EntryMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/shopping_cli/Menus/EntryMenu.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -128,7 +131,14 @@
       <option name="project" value="LOCAL‎" />
       <updated>1687488759717</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL‎-00008" summary="Spelling error correction.">
+      <created>1687488871405</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL‎-00008" />
+      <option name="project" value="LOCAL‎" />
+      <updated>1687488871405</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -139,6 +149,7 @@
     <MESSAGE value="Created Registration Screen." />
     <MESSAGE value="Created Login Screen." />
     <MESSAGE value="Created ConsoleService." />
-    <option name="LAST_COMMIT_MESSAGE" value="Created ConsoleService." />
+    <MESSAGE value="Spelling error correction." />
+    <option name="LAST_COMMIT_MESSAGE" value="Spelling error correction." />
   </component>
 </project>
