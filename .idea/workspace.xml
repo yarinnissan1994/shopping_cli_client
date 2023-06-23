@@ -4,13 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="46c60808-4630-4a91-b796-103d570ecfb3" name="Changes" comment="Build - Http client generic service;">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/shopping_cli/Menus/EntryMenu.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/shopping_cli/Screens/LoginScreen.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/shopping_cli/Screens/RegisterationScreen.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/shopping_cli/services/ConsoleService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="46c60808-4630-4a91-b796-103d570ecfb3" name="Changes" comment="Created ConsoleService.">
       <change beforePath="$PROJECT_DIR$/src/main/java/com/shopping_cli/Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/shopping_cli/Application.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/shopping_cli/Screens/RegisterationScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/shopping_cli/Screens/RegistrationScreen.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -104,13 +100,45 @@
       <option name="project" value="LOCAL‎" />
       <updated>1687470698525</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL‎-00004" summary="Created application EntryMenu.">
+      <created>1687488678214</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL‎-00004" />
+      <option name="project" value="LOCAL‎" />
+      <updated>1687488678214</updated>
+    </task>
+    <task id="LOCAL‎-00005" summary="Created Registration Screen.">
+      <created>1687488718819</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL‎-00005" />
+      <option name="project" value="LOCAL‎" />
+      <updated>1687488718819</updated>
+    </task>
+    <task id="LOCAL‎-00006" summary="Created Login Screen.">
+      <created>1687488734363</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL‎-00006" />
+      <option name="project" value="LOCAL‎" />
+      <updated>1687488734363</updated>
+    </task>
+    <task id="LOCAL‎-00007" summary="Created ConsoleService.">
+      <created>1687488759717</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL‎-00007" />
+      <option name="project" value="LOCAL‎" />
+      <updated>1687488759717</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Initial commit." />
     <MESSAGE value="Build entities." />
     <MESSAGE value="Build - Http client generic service;" />
-    <option name="LAST_COMMIT_MESSAGE" value="Build - Http client generic service;" />
+    <MESSAGE value="Created application EntryMenu." />
+    <MESSAGE value="Created Registration Screen." />
+    <MESSAGE value="Created Login Screen." />
+    <MESSAGE value="Created ConsoleService." />
+    <option name="LAST_COMMIT_MESSAGE" value="Created ConsoleService." />
   </component>
 </project>

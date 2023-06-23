@@ -4,7 +4,7 @@ import com.shopping_cli.services.ConsoleService;
 
 import java.util.Scanner;
 
-public class RegisterationScreen {
+public class RegistrationScreen {
     public static void start(Scanner scanner) {
         ConsoleService.clearConsole();
 

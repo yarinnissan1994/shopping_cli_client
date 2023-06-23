@@ -2,7 +2,7 @@ package com.shopping_cli;
 
 import com.shopping_cli.Menus.EntryMenu;
 import com.shopping_cli.Screens.LoginScreen;
-import com.shopping_cli.Screens.RegisterationScreen;
+import com.shopping_cli.Screens.RegistrationScreen;
 
 import java.util.Scanner;
 
@@ -14,7 +14,7 @@ public class Application {
 
         returnValue = EntryMenu.start(scanner);
         if(returnValue == 1)
-            RegisterationScreen.start(scanner);
+            RegistrationScreen.start(scanner);
         else if(returnValue == 2)
             LoginScreen.start(scanner);
         else
