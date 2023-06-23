@@ -13,12 +13,12 @@ public class Application {
         int returnValue;
 
         returnValue = EntryMenu.start(scanner);
-        if(returnValue == 1)
-            RegistrationScreen.start(scanner);
-        else if(returnValue == 2)
-            LoginScreen.start(scanner);
-        else
-            System.out.println("bye!");
+
+        switch (returnValue) {
+            case 1 -> RegistrationScreen.start(scanner);
+            case 2 -> LoginScreen.start(scanner);
+            default -> System.out.println("bye!");
+        }
 
         scanner.close();
     }

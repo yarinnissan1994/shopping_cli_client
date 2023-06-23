@@ -4,7 +4,7 @@ import com.shopping_cli.services.ConsoleService;
 
 import java.util.Scanner;
 
-public class EntryMenu {
+public class MainMenu {
     public static int start(Scanner scanner) {
 
         ConsoleService.clearConsole();
@@ -17,25 +17,29 @@ public class EntryMenu {
             breakLoop = true;
 
             System.out.println("==========================================");
-            System.out.println("|        Welcome to Shopping CLI         |");
+            System.out.println("|             Shopping CLI               |");
             System.out.println("==========================================");
-            System.out.println("|              Entry Menu                |");
+            System.out.println("|               Main Menu                |");
             System.out.println("==========================================");
-            System.out.println("|  1. Register                           |");
-            System.out.println("|  2. Login                              |");
-            System.out.println("|  0. Exit                               |");
+            System.out.println("|  1. Enter Shop - Categories            |");
+            System.out.println("|  2. My Cart                            |");
+            System.out.println("|  3. Checkout                           |");
+            System.out.println("|  4. My Profile                         |");
+            System.out.println("|  0. Logout                             |");
             System.out.println("==========================================");
 
             System.out.print("Enter your choice: ");
             String choice = scanner.nextLine();
 
-             value = switch (choice) {
-                case "1" -> 1; // Register
-                case "2" -> 2; // Login
+            value = switch (choice) {
+                case "1" -> 1; // Enter Shop
+                case "2" -> 2; // My Cart
+                case "3" -> 3; // Checkout
+                case "4" -> 4; // My Profile
                 case "0" -> {
-                    System.out.println("Exiting...");
+                    System.out.println("Logging out...");
                     yield 0;
-                } // Exit
+                } // Logout
                 default -> {
                     ConsoleService.spacingConsole();
                     System.out.println("Invalid choice. Please try again.");
