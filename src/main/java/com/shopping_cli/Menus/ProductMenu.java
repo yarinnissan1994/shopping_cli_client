@@ -9,13 +9,13 @@ import java.util.List;
 import java.util.Scanner;
 
 public class ProductMenu {
-    public static void start(Scanner scanner, List<Product> products) {
+    public static void start(Scanner scanner, List<Product> products, String categoryName) {
         ConsoleService.clearConsole();
 
         ListManagerService<Product> productListManager = new ListManagerService<>(products);
 
         boolean breakLoop;
-
+        boolean isFind = false;
         String choice;
 
         do {
@@ -28,7 +28,7 @@ public class ProductMenu {
             System.out.println("==========================================");
             System.out.println("|             Shopping CLI               |");
             System.out.println("==========================================");
-            System.out.println("|               Products                 |");
+            dynamicMenuHeader(categoryName);
             System.out.println("==========================================");
             if(currentPage < totalPages )
                 System.out.println("| N. Next Page                           |");
@@ -36,8 +36,10 @@ public class ProductMenu {
                 System.out.println("| P. Previous Page                       |");
             System.out.println("| SN. Sort Products by name              |");
             System.out.println("| SP. Sort Products by price             |");
+            if(isFind)
+                System.out.println("| R. Return to all Products              |");
             System.out.println("| F. Search Product                      |");
-            System.out.println("| 0. Back to Main Menu                   |");
+            System.out.println("| 0. Back to Categories                  |");
             System.out.println("==========================================");
 
             displayCategories(currentPageItems, currentPage, totalPages);
@@ -62,8 +64,12 @@ public class ProductMenu {
                     System.out.println("Sort by price");
                     ConsoleService.clearConsole();
                 }
+                case "r" -> {
+                    isFind = false;
+                }
                 case "f" -> {
                     System.out.println("Find");
+                    isFind = true;
                     ConsoleService.clearConsole();
                 }
                 case "1" -> {
@@ -109,11 +115,27 @@ public class ProductMenu {
 
         int i = 1;
 
-        for (Product category : products) {
-            System.out.println("- " + i + ". " + category.getName());
+        for (Product product : products) {
+            System.out.println("- " + i + ". " + product.getName() + " - " + product.getPrice() +"$");
             i++;
         }
 
         System.out.println("==========================================");
+    }
+
+    private static void dynamicMenuHeader(String categoryName) {
+        int staticLength = 40;
+        int dynamicLength = categoryName.length();
+        int padding = (staticLength - dynamicLength) / 2;
+
+        StringBuilder sb = new StringBuilder();
+        sb.append("|");
+        sb.append(" " .repeat(Math.max(0, padding)));
+        sb.append(categoryName);
+        sb.append(" " .repeat(Math.max(0, padding)));
+        sb.append("|");
+
+        String paddedString = sb.toString();
+        System.out.println(paddedString);
     }
 }
