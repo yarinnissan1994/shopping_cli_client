@@ -5,9 +5,8 @@ This project is a console-based application for shopping.
 [![Java Version](https://img.shields.io/badge/Java-20-blue.svg)](https://www.java.com/en/download/)
 [![MySQL](https://img.shields.io/badge/MySQL-latest-blue.svg)](https://www.mysql.com/)
 
-
 ## 📚 Table of Contents
-1. [Features](#Features)
+1. [Features](#features)
 2. [Technologies Used](#technologies-used)
 3. [Installation](#installation)
 4. [Configuration](#configuration)
