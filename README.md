@@ -40,7 +40,7 @@ You can install and run the Shopping CLI either natively or through Docker. Plea
 3. Restore the required dependencies: `mvn clean install`
 4. Build the app: `mvn package`
 5. Navigate to the execution directory: `cd target`
-6. Start the application: `java -jar your-app-name.jar`
+6. Start the application: `java -jar shopping_cli.jar`
 
 ## 🐳 Docker Installation
 1. Make sure Docker is up and running on your machine.
@@ -48,9 +48,7 @@ You can install and run the Shopping CLI either natively or through Docker. Plea
 3. Navigate to the project directory: `cd shopping_cli_client`
 4. Run the Docker Compose command: `docker-compose up -d`
 5. Run the Docker command: `docker exec -it [ContainerId] bash`
-6. Start the application: `dotnet UniqueIdsScannerUI.dll`
-
-> ⚠️ **Note:** When running the application via Docker, ensure the settings in `appconfig.json` reflect the Docker environment setup.
+6. Start the application: `dotnet shopping_cli.dll`
 
 ## <a name="running-tests"></a>🧪 Running Tests
 We have a comprehensive suite of unit tests implemented via "add libary". Ensure your installation is working as expected by running these tests.
