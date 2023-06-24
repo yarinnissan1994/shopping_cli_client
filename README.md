@@ -20,7 +20,6 @@ This project is a console-based application for shopping.
 - **Command-line interface (CLI) support:** The application provides a user-friendly command-line interface, allowing users to interact with the shopping features through user response pattern. This makes it easy to navigate the application, browse products, add items to the cart, and complete purchases, all from the command line.
 - **Cart management:** Users can add products to their cart, remove items, update quantities, and view the contents of their cart. This allows for easy management and organization of selected items before proceeding to checkout.
 - **Order history and account management:** Users have access to their order history, which includes details of past purchases. They can also manage their account settings, update personal information, and modify their preferences.
-- **Order history and account management:** Users have access to their order history, which includes details of past purchases. They can also manage their account settings, update personal information, and modify their preferences.
 
 ## <a name="technologies-used"></a>🛠️ Technologies Used
 - Frontend: CMD, SQLPAD
