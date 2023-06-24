@@ -7,6 +7,8 @@ import java.net.URISyntaxException;
 import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
+import java.util.Arrays;
+import java.util.List;
 
 public class HttpClientService {
     private static final HttpClient httpClient = HttpClient.newHttpClient();
@@ -21,7 +23,17 @@ public class HttpClientService {
         return gson.fromJson(response.body(), responseType);
     }
 
-    public static <T> String post(String url, Object requestBody, Class<T> responseType) throws URISyntaxException, IOException, InterruptedException {
+    public static <T> List<T> getList(String url, Class<T[]> responseType) throws URISyntaxException, IOException, InterruptedException {
+        HttpRequest getRequest = HttpRequest.newBuilder()
+                .uri(new URI(url))
+                .build();
+
+        HttpResponse<String> response = httpClient.send(getRequest, HttpResponse.BodyHandlers.ofString());
+        T[] array = gson.fromJson(response.body(), responseType);
+        return Arrays.asList(array);
+    }
+
+    public static <T> int post(String url, Object requestBody, Class<T> responseType) throws URISyntaxException, IOException, InterruptedException {
         String json = gson.toJson(requestBody);
 
         HttpRequest postRequest = HttpRequest.newBuilder()
@@ -31,7 +43,7 @@ public class HttpClientService {
                 .build();
 
         HttpResponse<String> response = httpClient.send(postRequest, HttpResponse.BodyHandlers.ofString());
-        return "Response code: " + response.statusCode() + "\n" + response.body();
+        return response.statusCode();
     }
 
     public static <T> String put(String url, Object requestBody, Class<T> responseType) throws URISyntaxException, IOException, InterruptedException {
