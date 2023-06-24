@@ -5,6 +5,7 @@ This project is a console-based application for shopping.
 [![Java Version](https://img.shields.io/badge/Java-20-blue.svg)](https://www.java.com/en/download/)
 [![MySQL](https://img.shields.io/badge/MySQL-latest-blue.svg)](https://www.mysql.com/)
 
+
 ## 📚 Table of Contents
 1. [Features](#features)
 2. [Technologies Used](#technologies-used)
@@ -14,7 +15,7 @@ This project is a console-based application for shopping.
 6. [Running Tests](#running-tests)
 7. [Contributions](#contributions)
 8. [License](#license)
-
+   
 ## ⚡ Features
 - User authentication
 - Deserialize KLA's XML files and verify the data from the file with the database
