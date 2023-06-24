@@ -17,15 +17,22 @@ This project is a console-based application for shopping.
 
 ## <a name="features"></a>🛠️Features
 - **User authentication:** Users can securely log in to the application using their credentials. This ensures that only authorized users can access the shopping features and perform actions.
-- **Command-line interface (CLI) support:** The application provides a user-friendly command-line interface, allowing users to interact with the shopping features through text-based commands.    This makes it easy to navigate the application, browse products, add items to the cart, and complete purchases, all from the command line.
-- 
+- **Command-line interface (CLI) support:** The application provides a user-friendly command-line interface, allowing users to interact with the shopping features through text-based commands. This makes it easy to navigate the application, browse products, add items to the cart, and complete purchases, all from the command line.
+- **Cart management:** Users can add products to their cart, remove items, update quantities, and view the contents of their cart. This allows for easy management and organization of selected items before proceeding to checkout.
+- **Order history and account management:** Users have access to their order history, which includes details of past purchases. They can also manage their account settings, update personal information, and modify their preferences.
+- **Order history and account management:** Users have access to their order history, which includes details of past purchases. They can also manage their account settings, update personal information, and modify their preferences.
 
 ## <a name="technologies-used"></a>🛠️ Technologies Used
 - Frontend: CMD, SQLPAD
-- Backend: C#, .NET 6
-- Database: SQL Server
+- Backend: Java jdk20 Maven
+- Spring-boot:
+  - data jpa
+  - hibernite
+  - spring session
+  - spring containers
+- Database: MySQL
 - Deployment: Docker, Github Actions
-- Testing: NUnit
+- Testing: 
 
 ## <a name="installation"></a>🔧 Installation
 You can install and run the Unique ID Scanner either natively or through Docker. Please choose the most suitable method for you.
