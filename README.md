@@ -3,7 +3,7 @@
 This project is a console-based application for shopping.
 
 [![.NET Version](https://img.shields.io/badge/.NET-6.0-blue.svg)](https://dotnet.microsoft.com/download)
-[![SQL Server](https://img.shields.io/badge/SQL%20Server-latest-blue.svg)](https://www.microsoft.com/sql-server/)
+[![MySQL Server](https://img.shields.io/badge/SQL%20Server-latest-blue.svg)](https://www.microsoft.com/sql-server/)
 
 ## 📚 Table of Contents
 1. [Features](#features)
@@ -17,7 +17,7 @@ This project is a console-based application for shopping.
 
 ## ⚡ Features
 - User authentication
-- Deserialize KLA's XML files and verify the data from the file with the databaseddd
+- Deserialize KLA's XML files and verify the data from the file with the database
 - If the verification process passes without any issues, you can update the database with your new data
 - Generate reports and visualize progress
 
