@@ -16,10 +16,9 @@ This project is a console-based application for shopping.
 8. [License](#license)
 
 ## <a name="features"></a>🛠️Features
-- User authentication
-- Deserialize KLA's XML files and verify the data from the file with the database
-- If the verification process passes without any issues, you can update the database with your new data
-- Generate reports and visualize progress
+- **User authentication:** Users can securely log in to the application using their credentials. This ensures that only authorized users can access the shopping features and perform actions.
+- **Command-line interface (CLI) support:** The application provides a user-friendly command-line interface, allowing users to interact with the shopping features through text-based commands.    This makes it easy to navigate the application, browse products, add items to the cart, and complete purchases, all from the command line.
+- 
 
 ## <a name="technologies-used"></a>🛠️ Technologies Used
 - Frontend: CMD, SQLPAD
