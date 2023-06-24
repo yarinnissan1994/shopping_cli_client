@@ -15,7 +15,7 @@ This project is a console-based application for shopping.
 7. [Contributions](#contributions)
 8. [License](#license)
 
-
+## <a name="Features"></a>🛠️ Features
 - User authentication
 - Deserialize KLA's XML files and verify the data from the file with the database
 - If the verification process passes without any issues, you can update the database with your new data
