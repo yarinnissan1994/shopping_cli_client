@@ -6,7 +6,7 @@ This project is a console-based application for shopping.
 [![MySQL](https://img.shields.io/badge/MySQL-latest-blue.svg)](https://www.mysql.com/)
 
 ## 📚 Table of Contents
-1. [Features] (#features)
+1. [Features](#features)
 2. [Technologies Used](#technologies-used)
 3. [Installation](#installation)
 4. [Configuration](#configuration)
