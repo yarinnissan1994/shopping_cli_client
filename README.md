@@ -45,7 +45,7 @@ You can install and run the Unique ID Scanner either natively or through Docker.
 2. Clone the repository: `git clone https://github.com/Eli2694/KLA.git`
 3. Navigate to the project directory: `cd KLA`
 4. Run the Docker Compose command: `docker-compose up -d`
-5. Run the Docker  command: `docker exec -it [ContainerId] bash`
+5. Run the Docker command: `docker exec -it [ContainerId] bash`
 6. Start the application: `dotnet UniqueIdsScannerUI.dll`
 
 
