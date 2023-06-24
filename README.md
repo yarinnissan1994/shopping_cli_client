@@ -35,17 +35,17 @@ This project is a console-based application for shopping.
 You can install and run the Shopping CLI either natively or through Docker. Please choose the most suitable method for you.
 
 ## 🖥️ Native Installation
-1. Clone the repository: `git clone https://github.com/Eli2694/KLA.git`
-2. Navigate to the project directory: `cd KLA`
-3. Restore the required dependencies: `dotnet restore UniqueIdsScannerUI/UniqueIdsScannerUI.csproj`
-4. Build the app: `dotnet build UniqueIdsScannerUI/UniqueIdsScannerUI.csproj`
-5. Navigate to the execution directory: `cd UniqueIdsScannerUI/UniqueIdsScannerUI/bin/debug/bin`
-6. Start the application: `dotnet UniqueIdsScannerUI.dll`
-7. 
+1. Clone the repository: `git clone https://github.com/yarinnissan1994/shopping_cli_client.git`
+2. Navigate to the project directory: `cd shopping_cli_client`
+3. Restore the required dependencies: `mvn clean install`
+4. Build the app: `mvn package`
+5. Navigate to the execution directory: `cd target`
+6. Start the application: `java -jar your-app-name.jar`
+
 ## 🐳 Docker Installation
 1. Make sure Docker is up and running on your machine.
-2. Clone the repository: `git clone https://github.com/Eli2694/KLA.git`
-3. Navigate to the project directory: `cd KLA`
+2. Clone the repository: `git clone https://github.com/yarinnissan1994/shopping_cli_client.git`
+3. Navigate to the project directory: `cd shopping_cli_client`
 4. Run the Docker Compose command: `docker-compose up -d`
 5. Run the Docker command: `docker exec -it [ContainerId] bash`
 6. Start the application: `dotnet UniqueIdsScannerUI.dll`
