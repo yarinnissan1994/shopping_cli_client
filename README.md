@@ -2,7 +2,7 @@
 
 This project is a console-based application for shopping.
 
-[![.NET Version](https://img.shields.io/badge/.NET-6.0-blue.svg)](https://dotnet.microsoft.com/download)
+
 [![MySQL](https://img.shields.io/badge/MySQL-latest-blue.svg)](https://www.mysql.com/)
 
 ## 📚 Table of Contents
