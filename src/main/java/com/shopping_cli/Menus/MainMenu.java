@@ -47,7 +47,7 @@ public class MainMenu {
                     scanner.nextLine();
                     ConsoleService.spacingConsole();
                     breakLoop = false;
-                    yield 0;
+                    yield -1; // Invalid choice. Return -1.
                 }
             };
 
