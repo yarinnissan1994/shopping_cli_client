@@ -17,7 +17,7 @@ This project is a console-based application for shopping.
 
 ## ⚡ Features
 - User authentication
-- Deserialize KLA's XML files and verify the data from the file with the database
+- Deserialize KLA's XML files and verify the data from the file with the databaseddd
 - If the verification process passes without any issues, you can update the database with your new data
 - Generate reports and visualize progress
 
