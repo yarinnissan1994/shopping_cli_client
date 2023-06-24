@@ -21,17 +21,17 @@ This project is a console-based application for shopping.
 - If the verification process passes without any issues, you can update the database with your new data
 - Generate reports and visualize progress
 
-## <a name="Technologies Used"></a> 🛠️ Technologies Used
+## <a name="Technologies Used"></a>🛠️ Technologies Used
 - Frontend: CMD, SQLPAD
 - Backend: C#, .NET 6
 - Database: SQL Server
 - Deployment: Docker, Github Actions
 - Testing: NUnit
 
-## <a name="Installation"></a> 🔧 Installation
+## <a name="Installation"></a>🔧 Installation
 You can install and run the Unique ID Scanner either natively or through Docker. Please choose the most suitable method for you.
 
-## <a name="Native Installation"></a>  🖥️ Native Installation
+## <a name="Native Installation"></a>🖥️ Native Installation
 1. Clone the repository: `git clone https://github.com/Eli2694/KLA.git`
 2. Navigate to the project directory: `cd KLA`
 3. Restore the required dependencies: `dotnet restore UniqueIdsScannerUI/UniqueIdsScannerUI.csproj`
