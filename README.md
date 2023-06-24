@@ -7,7 +7,7 @@ This project is a console-based application for shopping.
 
 
 ## 📚 Table of Contents
-1. [Features](#features)
+1. [Features](#Features)
 2. [Technologies Used](#technologies-used)
 3. [Installation](#installation)
 4. [Configuration](#configuration)
