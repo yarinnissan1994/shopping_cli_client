@@ -43,7 +43,7 @@ public class EntryMenu {
                     scanner.nextLine();
                     ConsoleService.spacingConsole();
                     breakLoop = false;
-                    yield 0;
+                    yield -1; // Invalid choice. Return -1.
                 }
             };
 
