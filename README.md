@@ -2,93 +2,59 @@
 
 This project is a console-based application for shopping.
 
-[![.NET Version](https://img.shields.io/badge/.NET-6.0-blue.svg)](https://dotnet.microsoft.com/download)
+[![Java Version](https://img.shields.io/badge/Java-20-blue.svg)](https://www.java.com/en/download/)
 [![MySQL](https://img.shields.io/badge/MySQL-latest-blue.svg)](https://www.mysql.com/)
 
 ## 📚 Table of Contents
 1. [Features](#features)
 2. [Technologies Used](#technologies-used)
 3. [Installation](#installation)
-4. [Configuration](#configuration)
-5. [Usage Instructions](#usage-instructions)
-6. [Running Tests](#running-tests)
-7. [Contributions](#contributions)
-8. [License](#license)
+4. [Running Tests](#running-tests)
+5. [Contributions](#contributions)
+6. [License](#license)
 
-## ⚡ Features
-- User authentication
-- Deserialize KLA's XML files and verify the data from the file with the database
-- If the verification process passes without any issues, you can update the database with your new data
-- Generate reports and visualize progress
+## <a name="features"></a>🛠️Features
+- **User authentication:** Users can securely log in to the application using their credentials. This ensures that only authorized users can access the shopping features and perform actions.
+- **Command-line interface (CLI) support:** The application provides a user-friendly command-line interface, allowing users to interact with the shopping features through user response pattern. This makes it easy to navigate the application, browse products, add items to the cart, and complete purchases, all from the command line.
+- **Cart management:** Users can add products to their cart, remove items, update quantities, and view the contents of their cart. This allows for easy management and organization of selected items before proceeding to checkout.
+- **Order history and account management:** Users have access to their order history, which includes details of past purchases. They can also manage their account settings, update personal information, and modify their preferences.
 
-## 🛠️ Technologies Used
+## <a name="technologies-used"></a>🛠️ Technologies Used
 - Frontend: CMD, SQLPAD
-- Backend: C#, .NET 6
-- Database: SQL Server
+- Backend: Java jdk20 Maven
+- Spring-boot:
+  - data jpa
+  - hibernite
+  - spring session
+  - spring containers
+- Database: MySQL
 - Deployment: Docker, Github Actions
-- Testing: NUnit
+- Testing: 
 
-## 🔧 Installation
+## <a name="installation"></a>🔧 Installation
+You can install and run the Shopping CLI either natively or through Docker. Please choose the most suitable method for you.
 
-You can install and run the Unique ID Scanner either natively or through Docker. Please choose the most suitable method for you.
+## 🖥️ Native Installation
+1. Clone the repository: `git clone https://github.com/yarinnissan1994/shopping_cli_client.git`
+2. Navigate to the project directory: `cd shopping_cli_client`
+3. Restore the required dependencies: `mvn clean install`
+4. Build the app: `mvn package`
+5. Navigate to the execution directory: `cd target`
+6. Start the application: `java -jar shopping_cli.jar`
 
-### 🖥️ Native Installation
-1. Clone the repository: `git clone https://github.com/Eli2694/KLA.git`
-2. Navigate to the project directory: `cd KLA`
-3. Restore the required dependencies: `dotnet restore UniqueIdsScannerUI/UniqueIdsScannerUI.csproj`
-4. Build the app: `dotnet build UniqueIdsScannerUI/UniqueIdsScannerUI.csproj`
-5. Navigate to the execution directory: `cd UniqueIdsScannerUI/UniqueIdsScannerUI/bin/debug/bin`
-6. Start the application: `dotnet UniqueIdsScannerUI.dll`
-
-### 🐳 Docker Installation
+## 🐳 Docker Installation
 1. Make sure Docker is up and running on your machine.
-2. Clone the repository: `git clone https://github.com/Eli2694/KLA.git`
-3. Navigate to the project directory: `cd KLA`
+2. Clone the repository: `git clone https://github.com/yarinnissan1994/shopping_cli_client.git`
+3. Navigate to the project directory: `cd shopping_cli_client`
 4. Run the Docker Compose command: `docker-compose up -d`
-5. Run the Docker  command: `docker exec -it [ContainerId] bash`
-6. Start the application: `dotnet UniqueIdsScannerUI.dll`
+5. Run the Docker command: `docker exec -it [ContainerId] bash`
+6. Start the application: `dotnet shopping_cli.dll`
 
+## <a name="running-tests"></a>🧪 Running Tests
+We have a comprehensive suite of unit tests implemented via "add libary". Ensure your installation is working as expected by running these tests.
 
-> ⚠️ **Note:** When running the application via Docker, ensure the settings in `appconfig.json` reflect the Docker environment setup.
-
-
-## ⚙️ Configuration
-Before running the application, users need to update the `appconfig.json` file with the following details:
-- **Field1.UsernameAndPassword**: Your credentials for accessing the SQL instance. Please input as follows: ["username","password"]
-- **Field2.XmlFilesPath**: The path to the XML files that you wish to scan
-- **Field3.GenerateReport**: Specify where you would like to store generated reports. This can be a local or remote path
-
-## 📖 Usage Instructions
-Our application provides both automated and manual modes. Here are the command-line options you can use:
-- `-f`, `--filePath`: The XML file path. Usage: `-f C:\folder\file.xml`
-- `-r`, `--rename`: To create a new alias. Usage: `dotnet UniqueIdsScannerUI.dll --update -r`
-- `--generate-report`: To generate a report. Usage: `dotnet UniqueIdsScannerUI.dll --generate-report`
-- `--update`: To verify and update. Usage: `dotnet UniqueIdsScannerUI.dll --update`
-- `--verify`: To just verify. Usage: `dotnet UniqueIdsScannerUI.dll --verify`
-
-## 🧪 Running Tests
-We have a comprehensive suite of unit tests implemented via NUnit. Ensure your installation is working as expected by running these tests.
-
-## 👥 Contributions
+## <a name="contributions"></a>👥 Contributions
 As of now, we are not accepting contributions to this project.
 
-## 📄 License
+## <a name="license"></a>📄 License
 There is no specific license associated with this project.
-
----
-
-[![Build Status](https://github.com/your-username/your-repo-name/workflows/CI/badge.svg)](https://github.com/your-username/your-repo-name/actions)
-
-A command-line interface (CLI) application for shopping.
-
-## Prerequisites
-
-- Java 20
-- Maven
-
-## Getting Started
-
-1. Clone the repository:
-
-   ```shell
-   git clone https://github.com/your-username/your-repo-name.git
