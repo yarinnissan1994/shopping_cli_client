@@ -7,8 +7,7 @@ public class OrderItem {
     private int quantity;
     private double itemAmount;
 
-    public OrderItem(Order order, Product product, int quantity, double itemAmount) {
-        this.order = order;
+    public OrderItem(Product product, int quantity, double itemAmount) {
         this.product = product;
         this.quantity = quantity;
         this.itemAmount = itemAmount;

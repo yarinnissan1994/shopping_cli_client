@@ -1,7 +1,6 @@
 package com.shopping_cli.data;
 
 import com.shopping_cli.config.ApiConfig;
-import com.shopping_cli.entities.Category;
 import com.shopping_cli.entities.Product;
 import com.shopping_cli.services.HttpClientService;
 
@@ -23,6 +22,30 @@ public class ProductData {
     public static List<Product> getAllProductsByCategory(int categoryId) {
         try {
             return HttpClientService.getList(baseUrl+"/category/"+categoryId, Product[].class);
+        } catch (URISyntaxException | IOException | InterruptedException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    public static List<Product> getAllProductsSortedByName() {
+        try {
+            return HttpClientService.getList(baseUrl+"/sort/name", Product[].class);
+        } catch (URISyntaxException | IOException | InterruptedException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    public static List<Product> getAllProductsSortedByPrice() {
+        try {
+            return HttpClientService.getList(baseUrl+"/sort/price", Product[].class);
+        } catch (URISyntaxException | IOException | InterruptedException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    public static List<Product> getAllProductSearch(String searchTerm) {
+        try {
+            return HttpClientService.getList(baseUrl+"/search/"+searchTerm, Product[].class);
         } catch (URISyntaxException | IOException | InterruptedException e) {
             throw new RuntimeException(e);
         }

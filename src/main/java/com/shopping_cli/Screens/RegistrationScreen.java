@@ -65,7 +65,7 @@ public class RegistrationScreen {
             switch (choice) {
                 case "y" -> {
                     try {
-                        int responseCode = UserData.register(user, Application.sessionToken);
+                        int responseCode = UserData.register(user);
                         ConsoleService.spacingConsole();
                         if (responseCode == 201) {
                             System.out.print("Press Enter to continue...");

@@ -42,19 +42,15 @@ public class LoginScreen {
             user.setEmail(email);
             user.setPassword(password);
 
-            try {
-                int responseCode = UserData.login(user, Application.sessionToken);
-                ConsoleService.spacingConsole();
-                if (responseCode == 202) {
-                    System.out.print("Press Enter to continue...");
-                    scanner.nextLine();
-                    breakLoop = true;
-                } else {
-                    System.out.print("Press Enter to continue...");
-                    scanner.nextLine();
-                }
-            } catch (URISyntaxException | IOException | InterruptedException e) {
-                throw new RuntimeException(e);
+            int responseCode = UserData.login(user);
+            ConsoleService.spacingConsole();
+            if (responseCode == 200) {
+                System.out.print("Press Enter to continue...");
+                scanner.nextLine();
+                breakLoop = true;
+            } else {
+                System.out.print("Press Enter to continue...");
+                scanner.nextLine();
             }
 
             System.out.println();

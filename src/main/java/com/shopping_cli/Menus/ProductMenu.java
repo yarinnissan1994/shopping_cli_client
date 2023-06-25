@@ -1,12 +1,14 @@
 package com.shopping_cli.Menus;
 
-import com.shopping_cli.entities.Category;
+import com.shopping_cli.Screens.ProductScreen;
+import com.shopping_cli.data.ProductData;
 import com.shopping_cli.entities.Product;
 import com.shopping_cli.services.ConsoleService;
 import com.shopping_cli.services.ListManagerService;
 
 import java.util.List;
 import java.util.Scanner;
+import java.util.stream.Collectors;
 
 public class ProductMenu {
     public static void start(Scanner scanner, List<Product> products, String categoryName) {
@@ -42,10 +44,14 @@ public class ProductMenu {
             System.out.println("| 0. Back to Categories                  |");
             System.out.println("==========================================");
 
-            displayCategories(currentPageItems, currentPage, totalPages);
+            displayProducts(currentPageItems, currentPage, totalPages);
 
-            System.out.print("Enter your choice: ");
-            choice = scanner.nextLine().toLowerCase();
+            if(products.size() != 0){
+                System.out.print("Enter your choice: ");
+                choice = scanner.nextLine().toLowerCase();
+            } else {
+                choice = "0";
+            }
 
             switch (choice) {
                 case "n" -> {
@@ -57,39 +63,42 @@ public class ProductMenu {
                     ConsoleService.clearConsole();
                 }
                 case "sn" -> {
-                    System.out.println("Sort by name");
+                    productListManager = new ListManagerService<>(ProductData.getAllProductsSortedByName());
                     ConsoleService.clearConsole();
                 }
                 case "sp" -> {
-                    System.out.println("Sort by price");
+                    productListManager = new ListManagerService<>(ProductData.getAllProductsSortedByPrice());
                     ConsoleService.clearConsole();
                 }
                 case "r" -> {
                     isFind = false;
                 }
                 case "f" -> {
-                    System.out.println("Find");
+                    System.out.print("Search Term: ");
+                    String searchTerm = scanner.nextLine();
+                    System.out.println("Searching for " + searchTerm + "...");
+                    productListManager = new ListManagerService<>(ProductData.getAllProductSearch(searchTerm));
                     isFind = true;
                     ConsoleService.clearConsole();
                 }
                 case "1" -> {
-                    System.out.println("Product 1");
+                    ProductScreen.start(scanner, currentPageItems.get(0));
                     breakLoop = true;
                 }
                 case "2" -> {
-                    System.out.println("Product 2");
+                    ProductScreen.start(scanner, currentPageItems.get(1));
                     breakLoop = true;
                 }
                 case "3" -> {
-                    System.out.println("Product 3");
+                    ProductScreen.start(scanner, currentPageItems.get(2));
                     breakLoop = true;
                 }
                 case "4" -> {
-                    System.out.println("Product 4");
+                    ProductScreen.start(scanner, currentPageItems.get(3));
                     breakLoop = true;
                 }
                 case "5" -> {
-                    System.out.println("Product 5");
+                    ProductScreen.start(scanner, currentPageItems.get(4));
                     breakLoop = true;
                 }
                 case "0" -> {
@@ -107,13 +116,19 @@ public class ProductMenu {
     }
 
 
-    private static void displayCategories(List<Product> products, int currentPage, int totalPages) {
+    private static void displayProducts(List<Product> products, int currentPage, int totalPages) {
 
         System.out.println();
         System.out.println("Page " + currentPage + " of " + totalPages);
         System.out.println();
 
         int i = 1;
+
+        if (products.size() == 0) {
+            System.out.println("No products found.");
+            ConsoleService.sleep(1000);
+            return;
+        }
 
         for (Product product : products) {
             System.out.println("- " + i + ". " + product.getName() + " - " + product.getPrice() +"$");
