@@ -32,13 +32,13 @@ public class ProductMenu {
             System.out.println("==========================================");
             dynamicMenuHeader(categoryName);
             System.out.println("==========================================");
-            if (currentPage < totalPages)
+            if(currentPage < totalPages )
                 System.out.println("| N. Next Page                           |");
-            if (currentPage != 1)
+            if(currentPage != 1)
                 System.out.println("| P. Previous Page                       |");
             System.out.println("| SN. Sort Products by name              |");
             System.out.println("| SP. Sort Products by price             |");
-            if (isFind)
+            if(isFind)
                 System.out.println("| R. Return to all Products              |");
             System.out.println("| F. Search Product                      |");
             System.out.println("| 0. Back to Categories                  |");
@@ -46,7 +46,7 @@ public class ProductMenu {
 
             displayProducts(currentPageItems, currentPage, totalPages);
 
-            if (products.size() != 0) {
+            if(products.size() != 0){
                 System.out.print("Enter your choice: ");
                 choice = scanner.nextLine().toLowerCase();
             } else {
@@ -81,6 +81,10 @@ public class ProductMenu {
                     isFind = true;
                     ConsoleService.clearConsole();
                 }
+                case "1", "2", "3", "4", "5" -> {
+                    ProductScreen.start(scanner, currentPageItems.get(Integer.parseInt(choice) - 1));
+                    breakLoop = true;
+                }
                 case "0" -> {
                     System.out.println("Exiting...");
                     breakLoop = true;
@@ -102,15 +106,17 @@ public class ProductMenu {
         System.out.println("Page " + currentPage + " of " + totalPages);
         System.out.println();
 
-        if (products.isEmpty()) {
+        int i = 1;
+
+        if (products.size() == 0) {
             System.out.println("No products found.");
             ConsoleService.sleep(1000);
             return;
         }
 
-        for (int i = 0; i < products.size(); i++) {
-            Product product = products.get(i);
-            System.out.println("- " + (i + 1) + ". " + product.getName() + " - " + product.getPrice() + "$");
+        for (Product product : products) {
+            System.out.println("- " + i + ". " + product.getName() + " - " + product.getPrice() +"$");
+            i++;
         }
 
         System.out.println("==========================================");
@@ -123,9 +129,9 @@ public class ProductMenu {
 
         StringBuilder sb = new StringBuilder();
         sb.append("|");
-        sb.append(" ".repeat(Math.max(0, padding)));
+        sb.append(" " .repeat(Math.max(0, padding)));
         sb.append(categoryName);
-        sb.append(" ".repeat(Math.max(0, padding)));
+        sb.append(" " .repeat(Math.max(0, padding)));
         sb.append("|");
 
         String paddedString = sb.toString();
