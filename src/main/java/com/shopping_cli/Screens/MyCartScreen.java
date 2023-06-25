@@ -16,13 +16,9 @@ import java.util.Scanner;
 
 public class MyCartScreen {
     public static void start(Scanner scanner) {
-
         ConsoleService.clearConsole();
 
         boolean breakLoop;
-
-        int value;
-
         List<OrderItem> cartItems;
         List<Category> categories;
         List<Product> products;
@@ -36,30 +32,37 @@ public class MyCartScreen {
         }
 
         ListManagerService<OrderItem> cartItemListManager = new ListManagerService<>(cartItems);
-
-        List<OrderItem> currentPageItems = cartItemListManager.getCurrentPageItems();
-        int currentPage = cartItemListManager.getCurrentPage();
-        int totalPages = cartItemListManager.getTotalPages();
+        List<OrderItem> currentPageItems;
+        int currentPage;
+        int totalPages;
 
         do {
             breakLoop = false;
+
+            ConsoleService.clearConsole();
 
             System.out.println("==========================================");
             System.out.println("|             Shopping CLI               |");
             System.out.println("==========================================");
             System.out.println("|                My Cart                 |");
             System.out.println("==========================================");
-            if(currentPage < totalPages )
+
+            currentPageItems = cartItemListManager.getCurrentPageItems();
+            currentPage = cartItemListManager.getCurrentPage();
+            totalPages = cartItemListManager.getTotalPages();
+
+            if (currentPage < totalPages) {
                 System.out.println("| N. Next Page                           |");
-            if(currentPage != 1)
+            }
+            if (currentPage != 1) {
                 System.out.println("| P. Previous Page                       |");
+            }
             System.out.println("|  1. Checkout                           |");
             System.out.println("|  2. Edit Cart                          |");
             System.out.println("|  0. Continue Shopping                  |");
             System.out.println("==========================================");
 
             displayCartItems(currentPageItems, categories, products, currentPage, totalPages);
-
             System.out.println();
 
             if (currentPage < totalPages) {
@@ -89,6 +92,7 @@ public class MyCartScreen {
                     ConsoleService.spacingConsole();
                 }
             }
+
             System.out.println();
         } while (!breakLoop);
     }
@@ -98,7 +102,6 @@ public class MyCartScreen {
                                          List<Product> products,
                                          int currentPage,
                                          int totalPages) {
-
         System.out.println();
         System.out.println("Page " + currentPage + " of " + totalPages);
         System.out.println();
@@ -145,13 +148,15 @@ public class MyCartScreen {
 
     private static void editCart(Scanner scanner,
                                  List<OrderItem> cart,
-                                 List <Category> categories,
+                                 List<Category> categories,
                                  List<Product> products) {
         boolean breakLoop;
+
         do {
             breakLoop = false;
 
             ConsoleService.clearConsole();
+
             System.out.println("==========================================");
             System.out.println("|             Shopping CLI               |");
             System.out.println("==========================================");
@@ -182,8 +187,10 @@ public class MyCartScreen {
             }
             System.out.println();
         } while (!breakLoop);
+
         System.out.println("Save changes in cart? Y/N");
         String choice = scanner.nextLine().toLowerCase();
+
         if (choice.equals("y")) {
             try {
                 CartData.updateCart(cart);

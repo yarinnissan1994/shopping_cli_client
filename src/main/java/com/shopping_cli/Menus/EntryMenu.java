@@ -6,11 +6,8 @@ import java.util.Scanner;
 
 public class EntryMenu {
     public static int start(Scanner scanner) {
-
         ConsoleService.clearConsole();
-
         boolean breakLoop;
-
         int value;
 
         do {
@@ -29,13 +26,13 @@ public class EntryMenu {
             System.out.print("Enter your choice: ");
             String choice = scanner.nextLine();
 
-             value = switch (choice) {
-                case "1" -> 1; // Register
-                case "2" -> 2; // Login
+            switch (choice) {
+                case "1" -> value = 1; // Register
+                case "2" -> value = 2; // Login
                 case "0" -> {
                     System.out.println("Exiting...");
-                    yield 0;
-                } // Exit
+                    return 0; // Exit
+                }
                 default -> {
                     ConsoleService.spacingConsole();
                     System.out.println("Invalid choice. Please try again.");
@@ -43,9 +40,9 @@ public class EntryMenu {
                     scanner.nextLine();
                     ConsoleService.spacingConsole();
                     breakLoop = false;
-                    yield -1; // Invalid choice. Return -1.
+                    value = -1; // Invalid choice. Return -1.
                 }
-            };
+            }
 
             System.out.println();
         } while (!breakLoop);

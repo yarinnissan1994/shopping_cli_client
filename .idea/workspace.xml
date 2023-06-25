@@ -5,18 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="46c60808-4630-4a91-b796-103d570ecfb3" name="Changes" comment="Worked on product menu and created product data for http requests.">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/shopping_cli/Screens/ProductScreen.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/shopping_cli/data/CartData.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/shopping_cli/Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/shopping_cli/Application.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/shopping_cli/Menus/CategoryMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/shopping_cli/Menus/CategoryMenu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/shopping_cli/Menus/EntryMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/shopping_cli/Menus/EntryMenu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/shopping_cli/Menus/MainMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/shopping_cli/Menus/MainMenu.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/shopping_cli/Menus/ProductMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/shopping_cli/Menus/ProductMenu.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/shopping_cli/Screens/LoginScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/shopping_cli/Screens/LoginScreen.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/shopping_cli/Screens/MyCartScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/shopping_cli/Screens/MyCartScreen.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/shopping_cli/Screens/ProductScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/shopping_cli/Screens/ProductScreen.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/shopping_cli/Screens/RegistrationScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/shopping_cli/Screens/RegistrationScreen.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/shopping_cli/data/ProductData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/shopping_cli/data/ProductData.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/shopping_cli/data/CartData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/shopping_cli/data/CartData.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/shopping_cli/data/UserData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/shopping_cli/data/UserData.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/shopping_cli/entities/OrderItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/shopping_cli/entities/OrderItem.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/shopping_cli/services/ConsoleService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/shopping_cli/services/ConsoleService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/shopping_cli/services/HttpClientService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/shopping_cli/services/HttpClientService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -280,7 +279,14 @@
       <option name="project" value="LOCAL‎" />
       <updated>1687623108554</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL‎-00027" summary="Worked on product menu and created product data for http requests.">
+      <created>1687672562383</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL‎-00027" />
+      <option name="project" value="LOCAL‎" />
+      <updated>1687672562383</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">

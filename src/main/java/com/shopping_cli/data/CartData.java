@@ -2,11 +2,9 @@ package com.shopping_cli.data;
 
 import com.google.gson.Gson;
 import com.shopping_cli.entities.OrderItem;
-import com.shopping_cli.entities.User;
 import com.shopping_cli.services.HttpClientService;
 
 import java.io.IOException;
-import java.net.HttpURLConnection;
 import java.net.URI;
 import java.net.URISyntaxException;
 import java.net.http.HttpClient;
@@ -24,9 +22,11 @@ public class CartData {
     private static String SESSION_TOKEN;
 
     public static List<OrderItem> getCart() throws URISyntaxException, IOException, InterruptedException {
+        String cartUrl = BASE_URL + "cart";
+
         HttpRequest getRequest = HttpRequest.newBuilder()
-                .uri(URI.create(BASE_URL+"cart"))
-                .header("Cookie","JSESSIONID=" + SESSION_TOKEN)
+                .uri(new URI(cartUrl))
+                .header("Cookie", "JSESSIONID=" + SESSION_TOKEN)
                 .build();
 
         HttpResponse<String> response = httpClient.send(getRequest, HttpResponse.BodyHandlers.ofString());
@@ -37,17 +37,17 @@ public class CartData {
 
     public static void addToCart(OrderItem requestBody) throws URISyntaxException, IOException, InterruptedException {
         String json = gson.toJson(requestBody);
+        String addToCartUrl = BASE_URL + "cart";
 
         HttpRequest postRequest = HttpRequest.newBuilder()
-                .uri(URI.create(BASE_URL+"cart"))
+                .uri(new URI(addToCartUrl))
                 .header("Content-Type", "application/json")
                 .POST(HttpRequest.BodyPublishers.ofString(json))
                 .build();
 
         HttpResponse<String> response = httpClient.send(postRequest, HttpResponse.BodyHandlers.ofString());
-        response.statusCode();
 
-        if (response.statusCode() == HttpURLConnection.HTTP_OK) {
+        if (response.statusCode() == 200) {
             List<String> cookies = response.headers().map().get("Set-Cookie");
             if (cookies != null && !cookies.isEmpty()) {
                 SESSION_TOKEN = extractSessionToken(cookies.get(0));
@@ -56,20 +56,19 @@ public class CartData {
         }
     }
 
-//    public static void addToCart2(OrderItem cartItem) throws URISyntaxException, IOException, InterruptedException {
-//        HttpClientService.post(BASE_URL+"cart",  cartItem, OrderItem.class);
-//    }
-
-    public static void updateCart(List<OrderItem> Cart) throws URISyntaxException, IOException, InterruptedException {
-        HttpClientService.postList(BASE_URL+"cart", Cart, OrderItem[].class);
+    public static void updateCart(List<OrderItem> cart) throws URISyntaxException, IOException, InterruptedException {
+        String updateCartUrl = BASE_URL + "cart";
+        HttpClientService.postList(updateCartUrl, cart, OrderItem[].class);
     }
 
     public static void clearCart() throws URISyntaxException, IOException, InterruptedException {
-        HttpClientService.delete(BASE_URL+"cart");
+        String clearCartUrl = BASE_URL + "cart";
+        HttpClientService.delete(clearCartUrl);
     }
 
     public static void removeFromCart(OrderItem cartItem) throws URISyntaxException, IOException, InterruptedException {
-        HttpClientService.delete(BASE_URL+"cart/"+cartItem.getId());
+        String removeFromCartUrl = BASE_URL + "cart/" + cartItem.getId();
+        HttpClientService.delete(removeFromCartUrl);
     }
 
     private static String extractSessionToken(String cookie) {

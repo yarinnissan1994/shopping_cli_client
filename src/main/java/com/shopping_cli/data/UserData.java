@@ -4,7 +4,6 @@ import com.google.gson.Gson;
 import com.shopping_cli.entities.User;
 
 import java.io.IOException;
-import java.net.HttpURLConnection;
 import java.net.URI;
 import java.net.URISyntaxException;
 import java.net.http.HttpClient;
@@ -21,93 +20,80 @@ public class UserData {
 
     private static String SESSION_TOKEN;
 
-    public static int register( User user) throws URISyntaxException, IOException, InterruptedException {
+    public static int register(User user) throws URISyntaxException, IOException, InterruptedException {
         String json = gson.toJson(user);
-
-        HttpRequest postRequest = HttpRequest.newBuilder()
-                .uri(URI.create(BASE_URL+"users/register"))
-                .header("Content-Type", "application/json")
-                .POST(HttpRequest.BodyPublishers.ofString(json))
-                .build();
-
-        int statusCode = 0;
-
-        try {
-            HttpResponse<Void> response = httpClient.send(postRequest, HttpResponse.BodyHandlers.discarding());
-
-            statusCode = response.statusCode();
-
-            if (response.statusCode() == HttpURLConnection.HTTP_CREATED) {
-                List<String> cookies = response.headers().map().get("Set-Cookie");
-                if (cookies != null && !cookies.isEmpty()) {
-                    SESSION_TOKEN = extractSessionToken(cookies.get(0));
-                    System.out.println("User registered and logged in successfully.");
-                }
-            } else if (response.statusCode() == HttpURLConnection.HTTP_UNAUTHORIZED) {
-                System.out.println("Email already exists. Please try again.");
-            } else {
-                System.out.println("An error occurred during user registration. Please try again.");
-            }
-        } catch (IOException | InterruptedException e) {
-            e.printStackTrace();
-        }
-            return statusCode;
+        String registerUrl = BASE_URL + "users/register";
+        return sendPostRequest(registerUrl, json, true);
     }
 
-    public static int login( User user) {
+    public static int login(User user) throws URISyntaxException, IOException, InterruptedException {
         String json = gson.toJson(user);
+        String loginUrl = BASE_URL + "users/login";
+        return sendPostRequest(loginUrl, json, false);
+    }
 
+    private static int sendPostRequest(String url, String json, boolean isRegister) throws URISyntaxException, IOException, InterruptedException {
         HttpRequest postRequest = HttpRequest.newBuilder()
-                .uri(URI.create(BASE_URL+"users/login"))
+                .uri(new URI(url))
                 .header("Content-Type", "application/json")
                 .POST(HttpRequest.BodyPublishers.ofString(json))
                 .build();
 
-        int statusCode = 0;
+        HttpResponse<Void> response = httpClient.send(postRequest, HttpResponse.BodyHandlers.discarding());
 
-        try {
-            HttpResponse<Void> response = httpClient.send(postRequest, HttpResponse.BodyHandlers.discarding());
+        int statusCode = response.statusCode();
 
-            statusCode = response.statusCode();
-
-            if (response.statusCode() == HttpURLConnection.HTTP_OK) {
-                List<String> cookies = response.headers().map().get("Set-Cookie");
-                if (cookies != null && !cookies.isEmpty()) {
-                    SESSION_TOKEN = extractSessionToken(cookies.get(0));
+        if (statusCode == 201 || statusCode == 200) {
+            List<String> cookies = response.headers().map().get("Set-Cookie");
+            if (cookies != null && !cookies.isEmpty()) {
+                SESSION_TOKEN = extractSessionToken(cookies.get(0));
+                if (isRegister) {
+                    System.out.println("User registered successfully.");
+                } else {
                     System.out.println("User logged in successfully.");
                 }
-            } else {
-                System.out.println("Login failed. Status code: " + response.statusCode());
             }
-        } catch (IOException | InterruptedException e) {
-            e.printStackTrace();
+        } else if (statusCode == 401) {
+            if (isRegister) {
+                System.out.println("Email already exists. Please try again.");
+            } else {
+                System.out.println("Incorrect email or password. Please try again.");
+            }
+        } else {
+            System.out.println("An error occurred. Please try again.");
         }
+
         return statusCode;
     }
 
     public static int logout(String sessionToken) throws URISyntaxException, IOException, InterruptedException {
+        String logoutUrl = BASE_URL + "users/logout";
+
         HttpRequest deleteRequest = HttpRequest.newBuilder()
-                .uri(URI.create(BASE_URL + "users/logout"))
+                .uri(new URI(logoutUrl))
                 .header("Cookie", sessionToken)
                 .DELETE()
                 .build();
 
         HttpResponse<Void> response = httpClient.send(deleteRequest, HttpResponse.BodyHandlers.discarding());
 
-        if (response.statusCode() == HttpURLConnection.HTTP_OK) {
+        if (response.statusCode() == 200) {
             System.out.println("User logged out successfully.");
         } else {
             System.out.println("An error occurred during logout. Please try again.");
         }
+
         return response.statusCode();
     }
 
     public static User getCurrentUser(Class<User> responseType) throws URISyntaxException, IOException, InterruptedException {
         System.out.println("sessionToken: " + SESSION_TOKEN);
 
+        String currentUserUrl = BASE_URL + "users/current";
+
         HttpRequest getRequest = HttpRequest.newBuilder()
-                .uri(URI.create(BASE_URL+"users/current"))
-                .header("Cookie","JSESSIONID=" + SESSION_TOKEN)
+                .uri(new URI(currentUserUrl))
+                .header("Cookie", "JSESSIONID=" + SESSION_TOKEN)
                 .build();
 
         HttpResponse<String> response = httpClient.send(getRequest, HttpResponse.BodyHandlers.ofString());

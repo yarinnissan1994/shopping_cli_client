@@ -11,12 +11,9 @@ import java.util.Scanner;
 
 public class ProductScreen {
     public static void start(Scanner scanner, Product product) {
-
         ConsoleService.clearConsole();
 
         boolean breakLoop;
-
-        int value;
 
         do {
             breakLoop = false;
@@ -44,12 +41,12 @@ public class ProductScreen {
                 case "1" -> {
                     addToCart(product, scanner);
                     breakLoop = true;
-                } // Confirm and pay
+                }
                 case "2" -> {
                     MyCartScreen.start(scanner);
                     breakLoop = true;
-                } // Add to Cart
-                case "0" -> breakLoop = true; // Continue Shopping
+                }
+                case "0" -> breakLoop = true;
                 default -> {
                     ConsoleService.spacingConsole();
                     System.out.println("Invalid choice. Please try again.");
@@ -63,35 +60,40 @@ public class ProductScreen {
         } while (!breakLoop);
     }
 
-    private static void addToCart(Product product, Scanner scanner) throws RuntimeException {
+    private static void addToCart(Product product, Scanner scanner) {
         int amount = product.getQuantity() + 1;
-        while (amount > product.getQuantity()){
+
+        while (amount > product.getQuantity()) {
             ConsoleService.spacingConsole();
             System.out.println("You can only order up to: " + product.getQuantity());
             System.out.print("Amount: ");
             amount = Integer.parseInt(scanner.nextLine());
-            if (amount > product.getQuantity()){
+
+            if (amount > product.getQuantity()) {
                 System.out.println("Invalid amount. Please try again.");
                 System.out.print("Press Enter to continue...");
                 scanner.nextLine();
                 ConsoleService.spacingConsole();
             }
         }
-        if (amount > 0){
+
+        if (amount > 0) {
             System.out.println("Details of your order: ");
             System.out.println("Product: " + product.getName());
             System.out.println("Amount: " + amount);
             System.out.println("Total price: " + amount * product.getPrice() + "$");
-            System.out.print("Add to cart? (Press any to confirm) - (N key to cancel): ");
-            String choice =  scanner.nextLine().toLowerCase();
-            if (choice.equals("n")){
+            System.out.print("Add to cart? (Press any key to confirm) - (N key to cancel): ");
+            String choice = scanner.nextLine().toLowerCase();
+
+            if (choice.equals("n")) {
                 return;
             }
-                try {
-                        CartData.addToCart(new OrderItem(product, amount, (amount * product.getPrice())));
-                } catch (URISyntaxException | IOException | InterruptedException e) {
-                    throw new RuntimeException(e);
-                }
+
+            try {
+                CartData.addToCart(new OrderItem(product, amount, (amount * product.getPrice())));
+            } catch (URISyntaxException | IOException | InterruptedException e) {
+                throw new RuntimeException(e);
+            }
         }
     }
 }

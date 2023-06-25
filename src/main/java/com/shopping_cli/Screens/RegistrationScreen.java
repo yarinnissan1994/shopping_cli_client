@@ -12,8 +12,6 @@ import java.util.Scanner;
 
 public class RegistrationScreen {
     public static void start(Scanner scanner) {
-
-        boolean breakLoop = false;
         String choice;
 
         do {
@@ -29,7 +27,9 @@ public class RegistrationScreen {
 
             choice = scanner.nextLine();
 
-            if(choice.equals("0")) return;
+            if (choice.equals("0")) {
+                return;
+            }
 
             ConsoleService.spacingConsole();
 
@@ -52,44 +52,29 @@ public class RegistrationScreen {
             System.out.println("Password: " + user.getPassword());
             System.out.println();
 
-            do{
+            do {
                 System.out.print("Confirm your credentials? (y/n): ");
                 choice = scanner.nextLine().toLowerCase();
                 System.out.println();
-                if (choice.equals("y") || choice.equals("n"))
-                    breakLoop = true;
-            } while (!breakLoop);
+            } while (!choice.equals("y") && !choice.equals("n"));
 
-            breakLoop = false;
-
-            switch (choice) {
-                case "y" -> {
-                    try {
-                        int responseCode = UserData.register(user);
-                        ConsoleService.spacingConsole();
-                        if (responseCode == 201) {
-                            System.out.print("Press Enter to continue...");
-                            scanner.nextLine();
-                            breakLoop = true;
-                        } else {
-                            System.out.print("Press Enter to continue...");
-                            scanner.nextLine();
-                        }
-                    } catch (URISyntaxException | IOException | InterruptedException e) {
-                        throw new RuntimeException(e);
-                    }
-                }
-                case "n" -> {
-                    ConsoleService.spacingConsole();
-                    System.out.println("Restarting Registration...");
-                }
-                default -> {
-                    ConsoleService.spacingConsole();
-                    System.out.println("Invalid choice. Please try again.");
-                    System.out.print("Press Enter to continue...");
-                    scanner.nextLine();
-                }
+            if (choice.equals("n")) {
+                ConsoleService.spacingConsole();
+                System.out.println("Restarting Registration...");
+                continue;
             }
-        } while (!breakLoop);
+
+            try {
+                int responseCode = UserData.register(user);
+                ConsoleService.spacingConsole();
+                System.out.print("Press Enter to continue...");
+                scanner.nextLine();
+                if (responseCode == 201) {
+                    break;
+                }
+            } catch (URISyntaxException | IOException | InterruptedException e) {
+                throw new RuntimeException(e);
+            }
+        } while (true);
     }
 }

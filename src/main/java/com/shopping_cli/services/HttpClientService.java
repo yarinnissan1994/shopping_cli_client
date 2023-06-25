@@ -85,27 +85,3 @@ public class HttpClientService {
         httpClient.send(deleteRequest, HttpResponse.BodyHandlers.ofString());
     }
 }
-
-//    String baseUrl = "http://localhost:8080/api/users";
-//
-//        User user = new User("HaShachen", "test", "XXXXXXXXXXXXX", UserType.CUSTOMER);
-//
-//        try {
-//            // Perform GET request
-//            User fetchedUser = HttpClientService.get(baseUrl + "/5", User.class);
-//            System.out.println(fetchedUser);
-//
-//            // Perform POST request
-//            String createdUser = HttpClientService.post(baseUrl, user, User.class);
-//            System.out.println(createdUser);
-//
-//            // Perform PUT request
-//            fetchedUser.setName("Amir");
-//            String updatedUser = HttpClientService.put(baseUrl + "/4", fetchedUser, User.class);
-//            System.out.println(updatedUser);
-//
-//            // Perform DELETE request
-//            HttpClientService.delete(baseUrl + "/" + fetchedUser.getId());
-//        } catch (IOException | InterruptedException | URISyntaxException e) {
-//            throw new RuntimeException(e);
-//        }

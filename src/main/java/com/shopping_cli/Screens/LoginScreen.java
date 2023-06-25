@@ -1,6 +1,5 @@
 package com.shopping_cli.Screens;
 
-import com.shopping_cli.Application;
 import com.shopping_cli.entities.User;
 import com.shopping_cli.services.ConsoleService;
 import com.shopping_cli.data.UserData;
@@ -11,11 +10,7 @@ import java.util.Scanner;
 
 public class LoginScreen {
     public static void start(Scanner scanner) {
-
-        boolean breakLoop = false;
-        String choice;
-
-        do {
+        while (true) {
             ConsoleService.clearConsole();
 
             System.out.println("==========================================");
@@ -26,9 +21,11 @@ public class LoginScreen {
             System.out.println();
             System.out.print("Press Enter to continue login or type 0 to exit: ");
 
-            choice = scanner.nextLine();
+            String choice = scanner.nextLine();
 
-            if(choice.equals("0")) return;
+            if (choice.equals("0")) {
+                return;
+            }
 
             ConsoleService.spacingConsole();
 
@@ -42,18 +39,21 @@ public class LoginScreen {
             user.setEmail(email);
             user.setPassword(password);
 
-            int responseCode = UserData.login(user);
-            ConsoleService.spacingConsole();
-            if (responseCode == 200) {
-                System.out.print("Press Enter to continue...");
-                scanner.nextLine();
-                breakLoop = true;
-            } else {
-                System.out.print("Press Enter to continue...");
-                scanner.nextLine();
+            int responseCode;
+            try {
+                responseCode = UserData.login(user);
+            } catch (Exception e) {
+                responseCode = -1; // Error response code
+                e.printStackTrace(); // Log the exception
             }
 
-            System.out.println();
-        } while (!breakLoop);
+            ConsoleService.spacingConsole();
+            System.out.print("Press Enter to continue...");
+            scanner.nextLine();
+
+            if (responseCode == 200) {
+                break;
+            }
+        }
     }
 }
